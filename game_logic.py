@@ -1,4 +1,3 @@
-# game_logic.py
 from colorama import Fore, Style
 
 def color_text(letter, color):
