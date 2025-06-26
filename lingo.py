@@ -30,6 +30,7 @@ def play_game():
         print_bingo_card(teams[current_team]["card"])
 
         word = random.choice(words)
+        print(f"hint---{word} ")
         print(f"New word! Starts with: {word[0]}")
 
         if play_round(word):
@@ -65,7 +66,10 @@ def play_game():
             break
 
         # Switch teams
-        current_team = 2 if current_team == 1 else 1
+    if current_team == 1:
+        current_team = 2
+    else:
+        current_team = 1
 
     again = input("Play again? (y/n): ").lower()
     if again == 'y':

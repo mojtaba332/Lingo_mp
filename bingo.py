@@ -36,14 +36,40 @@ def mark_card(card, number):
 
 
 def check_bingo(card):
+    # Check rows
     for row in card:
-        if all(cell == "X" for cell in row):
+        count = 0
+        for cell in row:
+            if cell == "X":
+                count += 1
+        if count == 4:
             return True
+
+    # Check columns
     for col in range(4):
-        if all(row[col] == "X" for row in card):
+        count = 0
+        for row in card:
+            if row[col] == "X":
+                count += 1
+        if count == 4:
             return True
-    if all(card[i][i] == "X" for i in range(4)) or all(card[i][3 - i] == "X" for i in range(4)):
+
+    # Check main diagonal
+    count = 0
+    for i in range(4):
+        if card[i][i] == "X":
+            count += 1
+    if count == 4:
         return True
+
+    # Check anti-diagonal
+    count = 0
+    for i in range(4):
+        if card[i][3 - i] == "X":
+            count += 1
+    if count == 4:
+        return True
+
     return False
 
 def grab_balls(team, card, green_balls, red_balls):
