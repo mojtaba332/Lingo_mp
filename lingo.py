@@ -30,7 +30,7 @@ def play_game():
         print_bingo_card(teams[current_team]["card"])
 
         word = random.choice(words)
-        print(f"hint---{word} ")
+        # print(f"hint---{word} ")
         print(f"New word! Starts with: {word[0]}")
 
         if play_round(word):

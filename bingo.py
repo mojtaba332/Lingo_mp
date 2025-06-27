@@ -54,7 +54,7 @@ def check_bingo(card):
         if count == 4:
             return True
 
-    # Check main diagonal
+    
     count = 0
     for i in range(4):
         if card[i][i] == "X":
@@ -62,7 +62,7 @@ def check_bingo(card):
     if count == 4:
         return True
 
-    # Check anti-diagonal
+ 
     count = 0
     for i in range(4):
         if card[i][3 - i] == "X":
